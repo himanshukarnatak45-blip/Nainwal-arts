@@ -670,5 +670,5 @@ body {
     height: 100%;
     width: 100%;
     position: relative;
-    z-index: 5; /* Isse link sabse upar aa jayega aur click hone lagega */
+    z-index: 5; 
 }
