@@ -62,30 +62,29 @@ exploreLinks.forEach(link => {
     link.addEventListener('click', (e) => {
         e.preventDefault();
         
-        // Naye Masonry layout ke hisab se data uthana
-        // Yahan '.portfolio-card' ko badal kar '.portfolio-item' kiya gaya hai
+       
         const item = link.closest('.portfolio-item'); 
         
         if (item) {
             const title = item.querySelector('h4').innerText;
             const imgPath = item.querySelector('img').src;
             
-            // Modal mein data bharna
+            // filling data in modal
             document.getElementById('modalTitle').innerText = title;
             document.getElementById('modalImg').src = imgPath;
             
-            // Agar aapke item mein description hai to wo bhi utha lega
+            // for discription
             const desc = item.querySelector('p') ? item.querySelector('p').innerText : "Premium Wedding Cinematography by Nainwal Art's.";
             document.getElementById('modalDesc').innerText = desc;
 
-            // Modal dikhana
+            //  show modal
             modal.style.display = 'flex';
             document.body.style.overflow = 'hidden'; 
         }
     });
 });
 
-// Modal band karne ke logic
+// for closing modal
 if (closeModal) {
     closeModal.addEventListener('click', () => {
         modal.style.display = 'none';
