@@ -1,0 +1,87 @@
+/* --- YAHAN SE PHOTOS CHANGE KAREIN --- */
+:root {
+    --img1: url('assets/img1.jpg');
+    --img2: url('assets/img2.jpg');
+    --img3: url('assets/img3.jpg');
+    --img4: url('assets/img4.jpg');
+    
+    --gold: #c5a059;
+    --white: #ffffff;
+    --dark: #0a0a0a;
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+    background-color: var(--dark);
+    color: var(--white);
+    font-family: 'Montserrat', sans-serif;
+    overflow: hidden;
+}
+
+/* Navbar */
+.navbar {
+    position: fixed; top: 0; width: 100%; padding: 30px 5%;
+    display: flex; justify-content: space-between; align-items: center; z-index: 100;
+}
+.logo { font-family: 'Cormorant Garamond', serif; font-size: 1.5rem; letter-spacing: 3px; }
+.logo span { color: var(--gold); }
+.est { font-size: 10px; letter-spacing: 2px; opacity: 0.7; }
+
+/* Slider */
+.hero { height: 100vh; position: relative; display: flex; align-items: center; justify-content: center; }
+
+.slider { position: absolute; inset: 0; z-index: -1; }
+.slide { 
+    position: absolute; inset: 0; opacity: 0; 
+    transition: opacity 1.2s ease-in-out, transform 6s ease-out;
+    background-size: cover; background-position: center;
+    filter: brightness(0.7);
+}
+
+/* Individual Slide Images */
+#s1 { background-image: var(--img1); }
+#s2 { background-image: var(--img2); }
+#s3 { background-image: var(--img3); }
+#s4 { background-image: var(--img4); }
+
+.slide.active { opacity: 1; transform: scale(1.05); }
+
+/* Overlay Content */
+.hero-overlay { text-align: center; z-index: 10; }
+.tagline { font-size: 10px; letter-spacing: 5px; color: var(--gold); margin-bottom: 10px; }
+.title { font-family: 'Cormorant Garamond', serif; font-size: clamp(3rem, 10vw, 6rem); font-weight: 400; }
+.title em { font-style: italic; }
+
+.enter-btn {
+    margin-top: 30px; display: inline-block; padding: 12px 35px;
+    border: 1px solid var(--white); color: var(--white);
+    text-decoration: none; font-size: 11px; letter-spacing: 2px;
+    transition: 0.3s; text-transform: uppercase;
+}
+.enter-btn:hover { background: var(--white); color: var(--dark); }
+
+/* Bottom UI */
+.bottom-ui {
+    position: absolute; bottom: 40px; width: 90%; 
+    display: flex; justify-content: space-between; align-items: flex-end;
+}
+.stats { display: flex; gap: 30px; }
+.item strong { display: block; color: var(--gold); font-size: 1.2rem; }
+.item span { font-size: 9px; letter-spacing: 1px; opacity: 0.6; }
+
+.controls { display: flex; align-items: center; gap: 20px; }
+.controls button { 
+    background: none; border: 1px solid rgba(255,255,255,0.2); 
+    color: white; width: 45px; height: 45px; border-radius: 50%; cursor: pointer;
+}
+#slideNum { font-size: 12px; color: var(--gold); }
+
+/* --- MOBILE RESPONSIVE --- */
+@media (max-width: 768px) {
+    .navbar { padding: 20px; }
+    .bottom-ui { flex-direction: column; align-items: center; gap: 30px; bottom: 30px; width: 100%; }
+    .stats { order: 2; }
+    .controls { order: 1; }
+    .title { font-size: 3.5rem; }
+}

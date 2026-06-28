@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nainwal Art's | Photography</title>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;1,400&family=Montserrat:wght@300;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <nav class="navbar">
+        <div class="logo">NAINWAL <span>ART'S</span></div>
+        <div class="est">ESTB. 2017</div>
+    </nav>
+
+    <main class="hero">
+        <div class="slider" id="mainSlider">
+            <div class="slide active" id="s1"></div>
+            <div class="slide" id="s2"></div>
+            <div class="slide" id="s3"></div>
+            <div class="slide" id="s4"></div>
+        </div>
+
+        <div class="hero-overlay">
+            <p class="tagline">CINEMATIC WEDDINGS & FILMS</p>
+            <h1 class="title">Visual <em>Stories</em></h1>
+            <a href="home.html" class="enter-btn">View Gallery</a>
+        </div>
+
+        <div class="bottom-ui">
+            <div class="stats">
+                <div class="item"><strong>250+</strong><span>Weddings</span></div>
+                <div class="item"><strong>7+</strong><span>Years</span></div>
+            </div>
+            
+            <div class="controls">
+                <button onclick="prevSlide()">←</button>
+                <span id="slideNum">01</span>
+                <button onclick="nextSlide()">→</button>
+            </div>
+        </div>
+    </main>
+
+    <script src="script.js"></script>
+
+</body>
+</html>
